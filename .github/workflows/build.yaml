@@ -7,16 +7,16 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-11
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
 
-      - name: Remove Node 18
-        run: sudo apt purge nodejs -y && sudo rm -r /etc/apt/sources.list.d/nodesource.list || true
+      # - name: Remove Node 18
+      #   run: sudo apt purge nodejs -y && sudo rm -r /etc/apt/sources.list.d/nodesource.list || true
       
-      - name: Install Node 16
-        run: cd ~ && curl -sL https://deb.nodesource.com/setup_16.x | sudo bash - && sudo apt update && sudo apt install nodejs -y
+      # - name: Install Node 16
+      #   run: cd ~ && curl -sL https://deb.nodesource.com/setup_16.x | sudo bash - && sudo apt update && sudo apt install nodejs -y
         
       - name: Check Node v
         run: node -v
