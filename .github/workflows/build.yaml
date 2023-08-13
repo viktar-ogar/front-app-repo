@@ -12,8 +12,8 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
 
-      # - name: Remove Node 18
-      #   run: sudo apt-get purge nodejs && sudo rm -r /etc/apt/sources.list.d/nodesource.list
+      - name: Remove Node 18
+        run: sudo apt purge nodejs && sudo rm -r /etc/apt/sources.list.d/nodesource.list
       
       - name: Install Node 16
         run: cd ~ && curl -sL https://deb.nodesource.com/setup_16.x | sudo bash - && sudo apt install nodejs -y
